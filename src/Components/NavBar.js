@@ -8,7 +8,7 @@ const NavBar = () => {
         Logout
       </button>
     </div>
-  );
+  );    
 };
 
 export default NavBar;
