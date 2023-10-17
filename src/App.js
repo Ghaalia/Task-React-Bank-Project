@@ -18,7 +18,7 @@ function App() {
 
       <Routes>
         {/* Lianne design */}
-        <Route path="/" Component={Welcome} />
+        <Route path="/" Component={Welcome} /> {/* DONE */}
         <Route path="/Register" Component={Register} />
         <Route path="/Login" Component={Login} />
         <Route path="/HomePage" Component={HomePage} />
