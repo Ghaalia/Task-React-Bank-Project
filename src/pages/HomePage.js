@@ -13,8 +13,10 @@ const HomePage = () => {
           <h1 className="text-white text-3xl"> 0.00 K.D.</h1>
         </div>
       </div>
+      <div className="flex justify-center">
+        <hr className=" h-5 w-[1000px]" />
+      </div>
 
-      <hr className="h-10 shadow-green-500" />
       {/*  buttons >>  Deposit , Withdraw, transaction , ... */}
       <div className="flex justify-evenly text-white ">
         <button className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-md px-3 py-2 mr-10">
