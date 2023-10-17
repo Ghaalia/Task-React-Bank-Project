@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -10,9 +11,12 @@ const NavBar = () => {
 
       <h1 className=" text-white ml-10">Hello, UserName</h1>
 
-      <button className=" absolute right-0 text-white hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10">
+      <NavLink
+        to="/"
+        className=" absolute right-0 text-white hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10"
+      >
         Logout
-      </button>
+      </NavLink>
     </div>
   );
 };
