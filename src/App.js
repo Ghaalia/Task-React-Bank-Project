@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import WithDraw from "./pages/WithDraw";
 import Transfer from "./pages/Transfer";
+import Welcome from "./pages/Welcome";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <NavBar />
 
       <Routes>
+        <Route path="/" Component={Welcome} />
         <Route path="/Register" Component={Register} />
         <Route path="/" Component={Login} />
         <Route path="/HomePage" Component={HomePage} />
