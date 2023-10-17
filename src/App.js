@@ -13,24 +13,20 @@ import Welcome from "./pages/Welcome";
 function App() {
   return (
     <div className="App">
+      {/* NavBar change */}
       <NavBar />
 
       <Routes>
+        {/* Lianne design */}
         <Route path="/" Component={Welcome} />
         <Route path="/Register" Component={Register} />
         <Route path="/Login" Component={Login} />
         <Route path="/HomePage" Component={HomePage} />
+        {/* Ghaalia design */}
         <Route path="/Deposit" Component={Deposit} />
         <Route path="/WithDraw" Component={WithDraw} />
         <Route path="/Transfer" Component={Transfer} />
       </Routes>
-
-      {/* <Register />
-      <Login />
-      <HomePage />
-      <Deposit />
-      <WithDraw />
-      <Transfer /> */}
     </div>
   );
 }
