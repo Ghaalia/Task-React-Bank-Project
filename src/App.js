@@ -21,7 +21,7 @@ function App() {
         <Route path="/" Component={Welcome} /> {/* DONE */}
         <Route path="/Register" Component={Register} />
         <Route path="/Login" Component={Login} />
-        <Route path="/HomePage" Component={HomePage} />
+        <Route path="/HomePage" Component={HomePage} /> {/*Almost DONE :)*/}
         {/* Ghaalia design */}
         <Route path="/Deposit" Component={Deposit} />
         <Route path="/WithDraw" Component={WithDraw} />

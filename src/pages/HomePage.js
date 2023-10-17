@@ -1,39 +1,75 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div>
-      {/* image an balance */}
-      <div className="shadow-green-600 h-50 flex items-center justify-evenly">
-        <div>
-          <img
-            className="px-3 py-2 rounded-full"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC"
-          />
+    <div className="flex items-center justify-center flex-col  h-screen ">
+      <div className="border border-solid border-white w-[90%] h-[100%] justify-center items-center">
+        <div className="h-[50%] flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center gap-3 border border-solid h-[40%] w-[50%]  border-gray-500 border-opacity-20 shadow-lg shadow-green-600 rounded-md ">
+            <h1 className="text-white text-2xl font-mono font-thin">
+              Balance :
+            </h1>
+            <div className="flex justify-center">
+              <h1 className="text-white text-2xl border border-solid  border-gray-500 border-opacity-20 rounded-full px-8 py-0 mr-2">
+                0.00
+              </h1>
+              <h1 className="text-white text-l"> K.D.</h1>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-white text-5xl"> Balance: </h1>
-          <h1 className="text-white text-3xl"> 0.00 K.D.</h1>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <hr className=" h-5 w-[1000px]" />
-      </div>
 
-      {/*  buttons >>  Deposit , Withdraw, transaction , ... */}
-      <div className="flex justify-evenly text-white ">
-        <button className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-md px-3 py-2 mr-10">
-          Deposit
-        </button>
-        <button className="border border-white border-solid hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10">
-          WithDraw
-        </button>
-        <button className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
-          Transaction
-        </button>
-        <button className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
-          Transfer
-        </button>
+        {/*  buttons >>  Deposit , Withdraw, transaction , ... */}
+        <div className=" relative flex flex-col justify-evenly items-center text-white h-[80%] w-[100%]">
+          <div className="flex justify-evenly items-centerh-[80%] w-[100%]">
+            <div className=" gap-4 flex flex-col items-center justify-center border border-solid h-[70%] w-[30%]  border-gray-500 border-opacity-20 shadow-lg shadow-green-600 rounded-md ">
+              <svg
+                className="h-[40%] w-[40%]"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M11.25 6H9C7.11438 6 6.17157 6 5.58579 6.58579C5 7.17157 5 8.11438 5 10L5.00005 16.25H18.9999L19 10C19 8.11438 19 7.17157 18.4142 6.58579C17.8284 6 16.8856 6 15 6H12.75V10.9726L13.4306 10.1786C13.7001 9.86408 14.1736 9.82766 14.4881 10.0972C14.8026 10.3668 14.839 10.8403 14.5695 11.1548L12.5695 13.4881C12.427 13.6543 12.219 13.75 12 13.75C11.7811 13.75 11.5731 13.6543 11.4306 13.4881L9.43057 11.1548C9.161 10.8403 9.19743 10.3668 9.51192 10.0972C9.82641 9.82766 10.2999 9.86408 10.5695 10.1786L11.25 10.9726V6Z"
+                    fill="#1ba157"
+                  ></path>{" "}
+                  <path
+                    d="M5.0306 17.75H18.9694C18.9181 18.5406 18.781 19.0474 18.4142 19.4142C17.8284 20 16.8856 20 15 20H9C7.11438 20 6.17157 20 5.58579 19.4142C5.21898 19.0474 5.08186 18.5406 5.0306 17.75Z"
+                    fill="#1ba157"
+                  ></path>{" "}
+                  <path
+                    d="M5.88889 3H18.1111C20.2589 3 22 4.79998 22 7.02036C22 8.30971 21.4129 9.45731 20.5 10.193L20.5 9.91053C20.5001 9.0449 20.5002 8.25122 20.4134 7.6056C20.3178 6.89464 20.0929 6.14319 19.4748 5.52514C18.8568 4.90709 18.1054 4.6822 17.3944 4.58661C16.7488 4.49981 15.9551 4.4999 15.0895 4.50001H8.91048C8.04485 4.4999 7.25118 4.49981 6.60556 4.58661C5.8946 4.6822 5.14315 4.90709 4.5251 5.52514C3.90706 6.14319 3.68216 6.89464 3.58657 7.6056C3.49977 8.25122 3.49987 9.04488 3.49997 9.91052L3.49998 10.193C2.58709 9.45727 2 8.30969 2 7.02036C2 4.79998 3.74112 3 5.88889 3Z"
+                    fill="#1ba157"
+                  ></path>
+                </g>
+              </svg>
+
+              <NavLink
+                to="/deposit"
+                className=" border border-white border-solid hover:bg-green-600 rounded-md px-3 py-2 mr-10"
+              >
+                + Deposit
+              </NavLink>
+            </div>
+
+            <div className="flex flex-col items-center justify-center border border-solid  h-[70%] w-[30%]   border-gray-500 border-opacity-20 shadow-lg shadow-green-600 rounded-md ">
+              <NavLink
+                to="/withdraw"
+                className="border border-white border-solid hover:bg-red-600 rounded-md px-3 py-2 mr-10"
+              >
+                - WithDraw
+              </NavLink>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
