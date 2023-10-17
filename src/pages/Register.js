@@ -31,7 +31,7 @@ const Register = () => {
         </div>
         <div className="flex justify-end">
           <button className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 ">
-            Register
+            Login
           </button>
         </div>
       </div>
