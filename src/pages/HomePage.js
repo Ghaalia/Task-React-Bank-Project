@@ -17,16 +17,16 @@ const HomePage = () => {
       <hr className="h-10 shadow-green-500" />
       {/*  buttons >>  Deposit , Withdraw, transaction , ... */}
       <div className="flex justify-evenly text-white ">
-        <button className=" hover:bg-gray-700 hover:text-green-600 rounded-md px-3 py-2 mr-10">
+        <button className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-md px-3 py-2 mr-10">
           Deposit
         </button>
-        <button className=" hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10">
+        <button className="border border-white border-solid hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10">
           WithDraw
         </button>
-        <button className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
+        <button className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
           Transaction
         </button>
-        <button className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
+        <button className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
           Transfer
         </button>
       </div>
