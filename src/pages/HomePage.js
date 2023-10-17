@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="flex items-center justify-center flex-col  h-screen ">
-      <div className="border border-solid border-white w-[90%] h-[100%] justify-center items-center">
+      <div className="w-[90%] h-[100%] justify-center items-center">
         <div className="h-[50%] flex items-center justify-center">
           <div className="flex flex-col items-center justify-center gap-3 border border-solid h-[40%] w-[50%]  border-gray-500 border-opacity-20 shadow-lg shadow-green-600 rounded-md ">
             <h1 className="text-white text-2xl font-mono font-thin">
