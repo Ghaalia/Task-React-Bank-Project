@@ -14,19 +14,21 @@ function App() {
     <div className="App">
       <NavBar />
 
-      {/* <Routes>
+      <Routes>
         <Route path="/Register" Component={Register} />
-        <Route path="/Login" Component={Login} />
-        <Route path="/" Component={HomePage} />
+        <Route path="/" Component={Login} />
+        <Route path="/HomePage" Component={HomePage} />
         <Route path="/Deposit" Component={Deposit} />
         <Route path="/WithDraw" Component={WithDraw} />
-      </Routes> */}
-      <Register />
+        <Route path="/Transfer" Component={Transfer} />
+      </Routes>
+
+      {/* <Register />
       <Login />
       <HomePage />
       <Deposit />
       <WithDraw />
-      <Transfer />
+      <Transfer /> */}
     </div>
   );
 }
