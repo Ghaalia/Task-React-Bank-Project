@@ -4,7 +4,7 @@ const Welcome = () => {
   return (
     <div className="">
       <div className="flex justify-center align-middle flex-col">
-        <div className=" text-white text-[150px] "> WELCOME </div>
+        <div className=" text-white text-[150px]"> WELCOME </div>
         <div className=" text-white text-[30px] flex justify-end  mr-[50px]">
           {" "}
           TO OUR BANK{" "}
