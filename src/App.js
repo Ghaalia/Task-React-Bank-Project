@@ -15,8 +15,9 @@ function App() {
       <NavBar />
 
       <Routes>
+        {/* <Route path="/" Component={Welcome} /> */}
         <Route path="/Register" Component={Register} />
-        <Route path="/" Component={Login} />
+        <Route path="/Login" Component={Login} />
         <Route path="/HomePage" Component={HomePage} />
         <Route path="/Deposit" Component={Deposit} />
         <Route path="/WithDraw" Component={WithDraw} />
