@@ -4,6 +4,8 @@ import React from "react";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import Deposit from "./pages/Deposit";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
         <Route />
         
       </Routes> */}
-
+      <Register />
+      <Login />
       <HomePage />
       <Deposit />
     </div>
