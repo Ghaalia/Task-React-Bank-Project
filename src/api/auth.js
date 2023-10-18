@@ -11,6 +11,7 @@ const login = async (userInfo) => {
 };
 
 const register = async (userInfo) => {
+  console.log(userInfo);
   const formData = new FormData();
   for (const key in userInfo) formData.append(key, userInfo[key]);
 
@@ -19,6 +20,12 @@ const register = async (userInfo) => {
     formData
   );
   storeToken(data?.token);
+  return data;
+};
+
+const getProfile = async () => {
+  const { data } = await instance.get("/mini-project/api/auth/me");
+
   return data;
 };
 
@@ -39,4 +46,4 @@ const checktoken = () => {
   return false;
 };
 
-export { login, register, checktoken };
+export { login, register, checktoken, getProfile };

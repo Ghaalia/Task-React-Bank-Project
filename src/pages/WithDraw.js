@@ -1,8 +1,18 @@
+import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { putWithdraw } from "../api/profile";
 
 const Deposit = () => {
   const [isInput, setIsInput] = useState(false);
   const [withdrawAmount, setWithdrawAmount] = useState(0);
+  const { mutate: withdraw_mutate } = useMutation({
+    mutationKey: ["withdraw"],
+    mutationFn: () => putWithdraw(withdrawAmount),
+    onSuccess: () => {
+      setWithdrawAmount(0);
+      alert(`You have successfully withdraw ${withdrawAmount} K.D.`);
+    },
+  });
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -69,7 +79,10 @@ const Deposit = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <button className=" text-white border border-white border-solid hover:bg-gray-700  hover:text-red-600 rounded-md px-3 py-2 w-[300px]">
+                  <button
+                    onClick={withdraw_mutate}
+                    className=" text-white border border-white border-solid hover:bg-gray-700  hover:text-red-600 rounded-md px-3 py-2 w-[300px]"
+                  >
                     - WithDraw
                   </button>
                 </div>

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import { putDeposit } from "../api/profile";
+import { useMutation } from "@tanstack/react-query";
 
 const Deposit = () => {
   const [isInput, setIsInput] = useState(false);
   const [depositAmount, setDepositAmount] = useState(0);
+
+  const { mutate: deposit_mutate } = useMutation({
+    mutationKey: ["deposit"],
+    mutationFn: () => putDeposit(depositAmount),
+    onSuccess: () => {
+      setDepositAmount(0);
+      alert(`You have successfully Deposit ${depositAmount} K.D.`);
+    },
+  });
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -69,7 +80,10 @@ const Deposit = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <button className=" text-white border border-white border-solid hover:bg-gray-700  hover:text-green-600 rounded-md px-3 py-2 w-[300px]">
+                  <button
+                    onClick={deposit_mutate}
+                    className=" text-white border border-white border-solid hover:bg-gray-700  hover:text-green-600 rounded-md px-3 py-2 w-[300px]"
+                  >
                     + Deposit
                   </button>
                 </div>
