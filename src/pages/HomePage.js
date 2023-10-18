@@ -141,7 +141,7 @@ const HomePage = () => {
 
               <NavLink
                 to="/transfer"
-                className=" border border-white border-solid hover:bg-grey-700 rounded-md px-5 py-2"
+                className=" border border-white border-solid hover:bg-gray-700 rounded-md px-5 py-2"
               >
                 Transfer
               </NavLink>
@@ -182,7 +182,7 @@ const HomePage = () => {
 
               <NavLink
                 to="/transactions"
-                className=" border border-white border-solid hover:bg-grey-700 rounded-md px-5 py-2"
+                className=" border border-white border-solid hover:bg-gray-700 rounded-md px-5 py-2"
               >
                 Transactions
               </NavLink>

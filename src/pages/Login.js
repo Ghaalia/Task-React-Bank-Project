@@ -30,13 +30,14 @@ const Login = () => {
             </label>
           </div>
 
-        <div className="flex justify-end">
-          <button
-            onClick={handelLogin}
-            className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
-          >
-            Login
-          </button>
+          <div className="flex justify-end">
+            <button
+              onClick={handelLogin}
+              className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
+            >
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </div>
