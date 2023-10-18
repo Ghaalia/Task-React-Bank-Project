@@ -1,30 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 const Welcome = () => {
   return (
-    <div className="">
-      <div className="flex justify-center align-middle flex-col">
-        <div className=" text-white text-[150px]"> WELCOME </div>
-        <div className=" text-white text-[30px] flex justify-end  mr-[50px]">
-          {" "}
-          TO OUR BANK{" "}
+    <div className="flex items-center justify-center flex-col  h-screen ">
+      <div className="border border-solid border-gray-500 border-opacity-20 shadow-lg shadow-green-600  w-[50%] h-[60%] flex justify-center items-center flex-col">
+        <div className="flex flex-col gap-6 h-[50%] w-[100%] justify-center items-center">
+          <h1 className=" text-white text-5xl font-mono">Prosperity Bank</h1>
+          <p className=" text-white text-l font-serif">
+            Unlock Your Financial Potential - Banking Made Simple !
+          </p>
         </div>
-      </div>
-      <div
-        id="main_container"
-        class="relative grid place-content-center place-items-center gap-2 before:bg-gradient-to-t before:from-teal-500/70 before:via-fuchsia-600 before:to-transparent before:blur-xl before:filter"
-      >
-        <h1 class="title text-6xl font-black text-teal-500">WELCOME</h1>
-        <h2 class="cursive text-6xl font-thin text-fuchsia-600">to our bank</h2>
-      </div>
 
-      <div className="flex flex-row justify-center align-bottom">
-        <button className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 ">
-          Login
-        </button>
-        <button className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 ">
-          Register
-        </button>
+        <div className=" flex flex-col gap-5 h-[50%] w-[100%] justify-center items-center">
+          <NavLink
+            to="/login"
+            className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-20 py-2 mr-10 "
+          >
+            Login
+          </NavLink>
+          <NavLink
+            to="/register"
+            className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-20 py-2 mr-10 "
+          >
+            Register
+          </NavLink>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handelLogin = () => {
+    setUser(true);
+    navigate("/homepage");
+  };
   return (
     <div className="flex justify-center">
       <div className="  w-[500px] flex flex-col ">
@@ -30,7 +39,10 @@ const Register = () => {
           </div>
         </div>
         <div className="flex justify-end">
-          <button className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 ">
+          <button
+            onClick={handelLogin}
+            className=" text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
+          >
             Login
           </button>
         </div>
