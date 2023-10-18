@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./Components/NavBar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import Deposit from "./pages/Deposit";
@@ -10,9 +10,14 @@ import WithDraw from "./pages/WithDraw";
 import Transfer from "./pages/Transfer";
 import Welcome from "./pages/Welcome";
 import UserContext from "./context/UserContext";
+import { checktoken } from "./api/auth";
 
 function App() {
   const [user, setUser] = useState(false);
+
+  useEffect(() => {
+    setUser(checktoken());
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

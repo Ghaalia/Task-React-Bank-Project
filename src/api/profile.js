@@ -10,12 +10,16 @@ const getTransactions = () => {
 };
 
 const putDeposit = (amount) => {
-  const { data } = instance.put("/mini-project/api/transactions/deposit");
+  const { data } = instance.put("/mini-project/api/transactions/deposit", {
+    amount,
+  });
   return data;
 };
 
 const putWithdraw = (amount) => {
-  const { data } = instance.put("/mini-project/api/transactions/withdraw");
+  const { data } = instance.put("/mini-project/api/transactions/withdraw", {
+    amount,
+  });
   return data;
 };
 
@@ -26,7 +30,7 @@ const putTransfer = (amount, username) => {
   return data;
 };
 
-const getUserInfo = () => {
+const getUserInfo = (userID) => {
   const { data } = instance.get(`/mini-project/api/auth/user/${userID}`);
   return data;
 };

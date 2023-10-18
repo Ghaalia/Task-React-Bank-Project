@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Deposit from "./Deposit";
+import { useQuery } from "@tanstack/react-query";
+import { getProfile } from "../api/auth";
 
 const HomePage = () => {
+  const { data } = useQuery({
+    queryKey: ["userProfile"],
+    queryFn: () => getProfile(),
+  });
+
+  console.log(data);
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center flex-col  h-screen ">
@@ -14,7 +22,7 @@ const HomePage = () => {
             </h1>
             <div className="flex justify-center">
               <h1 className="text-white text-2xl border border-solid  border-gray-500 border-opacity-20 rounded-full px-8 py-0 mr-2">
-                0.00
+                {data?.balance}
               </h1>
               <h1 className="text-white text-l"> K.D.</h1>
             </div>
@@ -231,7 +239,7 @@ const HomePage = () => {
               <svg
                 className="h-[60%] w-[50%]"
                 id="fi_8487150"
-                enable-background="new 0 0 468 468"
+                enableBackground="new 0 0 468 468"
                 height="512"
                 viewBox="0 0 468 468"
                 width="512"
