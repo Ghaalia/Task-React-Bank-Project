@@ -22,18 +22,16 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
-        {/* NavBar change */}
         {user && <NavBar />}
 
         <Routes>
-          {/* Lianne design */}
-          <Route path="/" Component={Welcome} /> {/* DONE */}
+          <Route path="/" Component={Welcome} />
           <Route path="/Register" Component={Register} />
           <Route path="/Login" Component={Login} />
-          <Route path="/HomePage" Component={HomePage} /> {/* Almost DONE :)*/}
-          {/* Ghaalia design */}
-          <Route path="/Deposit" Component={Deposit} /> {/* DONE */}
-          <Route path="/WithDraw" Component={WithDraw} /> {/* DONE */}
+          <Route path="/HomePage" Component={HomePage} />
+
+          <Route path="/Deposit" Component={Deposit} />
+          <Route path="/WithDraw" Component={WithDraw} />
           <Route path="/Transfer" Component={Transfer} />
         </Routes>
       </div>

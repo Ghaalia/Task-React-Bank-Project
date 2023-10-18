@@ -10,7 +10,6 @@ const HomePage = () => {
     queryFn: () => getProfile(),
   });
 
-  console.log(data);
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center flex-col  h-screen ">

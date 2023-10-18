@@ -9,6 +9,10 @@ const Deposit = () => {
   const { mutate: deposit_mutate } = useMutation({
     mutationKey: ["deposit"],
     mutationFn: () => putDeposit(depositAmount),
+    onSuccess: () => {
+      setDepositAmount(0);
+      alert(`You have successfully Deposit ${depositAmount} K.D.`);
+    },
   });
 
   return (

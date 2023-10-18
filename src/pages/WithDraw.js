@@ -8,6 +8,10 @@ const Deposit = () => {
   const { mutate: withdraw_mutate } = useMutation({
     mutationKey: ["withdraw"],
     mutationFn: () => putWithdraw(withdrawAmount),
+    onSuccess: () => {
+      setWithdrawAmount(0);
+      alert(`You have successfully withdraw ${withdrawAmount} K.D.`);
+    },
   });
 
   return (
