@@ -1,5 +1,9 @@
 import instance from ".";
 
+const getAllUsers = () => {
+  const { data } = instance.get("/mini-project/api/auth/users");
+  return data;
+};
 const getTransactions = () => {
   const { data } = instance.get("/mini-project/api/transactions/my");
   return data;
@@ -27,4 +31,11 @@ const getUserInfo = () => {
   return data;
 };
 
-export { getTransactions, putDeposit, putWithdraw, putTransfer, getUserInfo };
+export {
+  getTransactions,
+  putDeposit,
+  putWithdraw,
+  putTransfer,
+  getUserInfo,
+  getAllUsers,
+};

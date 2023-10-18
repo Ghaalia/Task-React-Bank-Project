@@ -1,15 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import UserContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { login } from "../api/auth";
 
 const Login = () => {
+  const [userInfo, setUserInfo] = useState({});
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const handelLogin = () => {
-    setUser(true);
-    navigate("/homepage");
+  const handleChange = (e) => {
+    setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  const { mutate: login_muate, isLoading } = useMutation({
+    mutationKey: ["login"],
+    mutationFn: () => login(userInfo),
+    onSuccess: () => {
+      navigate("/homepage");
+      setUser(true);
+    },
+  });
 
   return (
     <div className="flex justify-center h-screen ">
@@ -20,7 +31,13 @@ const Login = () => {
             <div>
               <label className="block text-white text-lg font-small">
                 Username: {"  "}
-                <input placeholder="" type="text"></input>
+                <input
+                  name="username"
+                  className="text-gray-600"
+                  onChange={handleChange}
+                  placeholder=""
+                  type="text"
+                ></input>
               </label>
             </div>
 
@@ -28,13 +45,19 @@ const Login = () => {
               <div>
                 <label className="block text-white font-small text-lg">
                   Password:{"    "}
-                  <input placeholder="" type="password"></input>
+                  <input
+                    name="password"
+                    className="text-gray-600"
+                    onChange={handleChange}
+                    placeholder=""
+                    type="password"
+                  ></input>
                 </label>
               </div>
 
               <div className="flex justify-end">
                 <button
-                  onClick={handelLogin}
+                  onClick={login_muate}
                   className=" border border-white text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 mt-3"
                 >
                   Login

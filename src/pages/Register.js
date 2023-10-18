@@ -1,15 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import UserContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { register } from "../api/auth";
+import { useMutation } from "@tanstack/react-query";
 
 const Register = () => {
+  const [userInfo, setUserInfo] = useState({});
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const handelLogin = () => {
-    setUser(true);
-    navigate("/homepage");
+  const handleChange = (e) => {
+    if (e.target.name === "image") {
+      setUserInfo({ ...userInfo, [e.target.name]: e.target.files[0] });
+    } else {
+      setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+    }
   };
+
+  const { mutate: register_mutate } = useMutation({
+    mutationKey: ["register"],
+    mutationFn: () => register(userInfo),
+    onSuccess: () => {
+      navigate("/homepage");
+      setUser(true);
+    },
+  });
+
   return (
     <div className="flex justify-center h-screen">
       <div className="  w-[100%] h-[100%] flex flex-col justify-center items-center ">
@@ -22,7 +38,9 @@ const Register = () => {
                 Username:
               </label>
               <input
-                className="w-[250px] px-3 py-1 ml-1"
+                name="username"
+                onChange={handleChange}
+                className="w-[250px] px-3 py-1 ml-1 text-gray-600 "
                 placeholder=""
                 type="text"
               ></input>
@@ -33,18 +51,9 @@ const Register = () => {
                 Password:
               </label>
               <input
-                className="w-[250px] px-3 py-1 ml-2"
-                placeholder=""
-                type="password"
-              ></input>
-            </div>
-
-            <div className="flex justify-between align-middle  w-[60%]">
-              <label className=" flex aliblock text-white text-lg font-small">
-                Confirmation:{" "}
-              </label>
-              <input
-                className="w-[250px] px-3 py-1"
+                name="password"
+                onChange={handleChange}
+                className="w-[250px] px-3 py-1 ml-2 text-gray-600"
                 placeholder=""
                 type="password"
               ></input>
@@ -54,12 +63,18 @@ const Register = () => {
               <label className="block text-white text-lg font-small">
                 Image:
               </label>
-              <input placeholder="" type="file" className="w-[250px] "></input>
+              <input
+                onChange={handleChange}
+                placeholder=""
+                type="file"
+                name="image"
+                className="w-[250px] "
+              ></input>
             </div>
 
             <div>
               <button
-                onClick={handelLogin}
+                onClick={register_mutate}
                 className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
               >
                 Register
