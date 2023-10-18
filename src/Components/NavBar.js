@@ -1,7 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const NavBar = () => {
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handelLogout = () => {
+    setUser(false);
+    navigate("/welcome");
+  };
   return (
     <div className="relative bg-gray-800 h-20 shadow-2xl shadow-green-800 flex justify-start items-center mb-10">
       <>
@@ -22,6 +30,7 @@ const NavBar = () => {
         </NavLink>
 
         <NavLink
+          onClick={handelLogout}
           to="/"
           className="   text-white hover:bg-gray-700 hover:text-red-600 rounded-md px-3 py-2 mr-10"
         >

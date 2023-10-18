@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 const Welcome = () => {
@@ -27,15 +27,6 @@ const Welcome = () => {
           </NavLink>
         </div>
       </div>
-
-      {/* <div className="flex flex-col justify-center items-center gap-5 bg-black w-[50%] h-[30%]">
-        <button className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-20 py-2 mr-10 ">
-          Login
-        </button>
-        <button className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-20 py-2 mr-10 ">
-          Register
-        </button>
-      </div> */}
     </div>
   );
 };

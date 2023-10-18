@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Deposit = () => {
+  const [isInput, setIsInput] = useState(false);
   const [depositAmount, setDepositAmount] = useState(0);
 
   return (
@@ -13,10 +14,19 @@ const Deposit = () => {
                 <h1 className="text-white text-2xl font-mono font-thin">
                   Amount To Deposit :
                 </h1>
-                <div className="flex justify-center">
-                  <h1 className="text-white text-2xl border border-solid  border-gray-500 border-opacity-20 rounded-full px-8 py-0 mr-2">
-                    {depositAmount}
-                  </h1>
+                <div className="flex justify-center gap-[10px]">
+                  {isInput ? (
+                    <input
+                      onChange={(e) => setDepositAmount(e.target.value)}
+                      type="number"
+                      className="text-white text-sm border border-solid bg-gray-800  border-gray-500 border-opacity-20 rounded-full px-2 py-0 w-[100px]"
+                      placeholder="Amount"
+                    />
+                  ) : (
+                    <h1 className="text-white text-2xl border border-solid  border-gray-500 border-opacity-20 rounded-full px-8 py-0 mr-2">
+                      {depositAmount}
+                    </h1>
+                  )}
                   <h1 className="text-white text-l"> K.D.</h1>
                 </div>
               </div>
@@ -26,6 +36,7 @@ const Deposit = () => {
                   <button
                     onClick={() => {
                       setDepositAmount(100);
+                      setIsInput(false);
                     }}
                     className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-full px-3 py-2 mr-10"
                   >
@@ -34,6 +45,7 @@ const Deposit = () => {
                   <button
                     onClick={() => {
                       setDepositAmount(150);
+                      setIsInput(false);
                     }}
                     className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-full px-3 py-2 mr-10"
                   >
@@ -42,12 +54,16 @@ const Deposit = () => {
                   <button
                     onClick={() => {
                       setDepositAmount(200);
+                      setIsInput(false);
                     }}
                     className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-full px-3 py-2 mr-10"
                   >
                     200 K.D
                   </button>
-                  <button className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10">
+                  <button
+                    onClick={() => setIsInput(true)}
+                    className="border border-white border-solid hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 mr-10"
+                  >
                     Custom Amount
                   </button>
                 </div>
