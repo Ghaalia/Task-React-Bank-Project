@@ -40,7 +40,7 @@ const Register = () => {
               <input
                 name="username"
                 onChange={handleChange}
-                className="w-[250px] px-3 py-1 ml-1 text-gray-600 "
+                className="w-[250px] px-3 py-1 ml-1 text-gray-600 rounded-md "
                 placeholder=""
                 type="text"
               ></input>
@@ -53,7 +53,7 @@ const Register = () => {
               <input
                 name="password"
                 onChange={handleChange}
-                className="w-[250px] px-3 py-1 ml-2 text-gray-600"
+                className="w-[250px] px-3 py-1 ml-2 text-gray-600 rounded-md"
                 placeholder=""
                 type="password"
               ></input>
@@ -65,7 +65,6 @@ const Register = () => {
               </label>
               <input
                 onChange={handleChange}
-                placeholder="" //??
                 type="file"
                 name="image"
                 className="w-[250px] text-white"
