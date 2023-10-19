@@ -11,9 +11,8 @@ const login = async (userInfo) => {
 };
 
 const register = async (userInfo) => {
-  console.log(userInfo);
   const formData = new FormData();
-  for (const key in userInfo) formData.append(key, userInfo[key]);
+  for (let key in userInfo) formData.append(key, userInfo[key]);
 
   const { data } = await instance.post(
     "/mini-project/api/auth/register",
