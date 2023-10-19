@@ -26,6 +26,10 @@ const Register = () => {
     },
   });
 
+  if (user) {
+    navigate("/homepage");
+  }
+
   return (
     <div className="flex justify-center h-screen">
       <div className="  w-[100%] h-[100%] flex flex-col justify-center items-center ">

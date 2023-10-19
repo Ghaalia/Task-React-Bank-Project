@@ -8,7 +8,10 @@ const Transfer = () => {
     queryFn: () => getAllUsers(),
   });
 
-  console.log(data);
+  // const users = data?.map((user) => {
+  //   <OneUser user={user} />;
+  // });
+
   return (
     <div className="flex justify-evenly flex-col text-white ">
       <div className="flex justify-center relative h-[100px] items-center">
@@ -24,9 +27,6 @@ const Transfer = () => {
             Transfer
           </button>
         </div>
-        {/* <button className="border border-white border-solid hover:bg-gray-700 hover:text-green-600 rounded-md px-3 py-2 mr-10">
-          Transfer
-        </button> */}
       </div>
     </div>
   );
