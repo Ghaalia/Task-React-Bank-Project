@@ -17,7 +17,7 @@ const Register = () => {
     }
   };
 
-  const { mutate: register_mutate } = useMutation({
+  const { mutate: register_mutate, isPending } = useMutation({
     mutationKey: ["register"],
     mutationFn: () => register(userInfo),
     onSuccess: () => {
@@ -65,7 +65,7 @@ const Register = () => {
               </label>
               <input
                 onChange={handleChange}
-                placeholder=""
+                placeholder="" //??
                 type="file"
                 name="image"
                 className="w-[250px] "
@@ -73,12 +73,21 @@ const Register = () => {
             </div>
 
             <div>
-              <button
-                onClick={register_mutate}
-                className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
-              >
-                Register
-              </button>
+              {isPending ? (
+                <button
+                  disabled
+                  className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
+                >
+                  Loading...
+                </button>
+              ) : (
+                <button
+                  onClick={register_mutate}
+                  className="border border-white border-solid text-white hover:bg-gray-700 rounded-md px-3 py-2 mr-10 "
+                >
+                  Register
+                </button>
+              )}
             </div>
           </div>
         </div>
