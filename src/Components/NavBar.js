@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import { useQuery } from "@tanstack/react-query";
-import { getProfile } from "../api/auth";
+import { getProfile, logout } from "../api/auth";
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
@@ -14,7 +14,7 @@ const NavBar = () => {
   });
 
   const handelLogout = () => {
-    setUser(false);
+    logout(setUser);
     navigate("/welcome");
   };
   return (

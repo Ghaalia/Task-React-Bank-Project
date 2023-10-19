@@ -9,6 +9,10 @@ const Login = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  if (user) {
+    navigate("/homepage");
+  }
+
   const handleChange = (e) => {
     setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -60,8 +64,9 @@ const Login = () => {
                   onClick={() => navigate("/register")}
                   className="text-gray-300 text-xs hover:underline"
                 >
-                  Already have an Account? Register
+                  Don't have an Account? Register Now!
                 </button>
+
                 {isPending ? (
                   <button
                     disabled

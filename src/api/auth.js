@@ -28,6 +28,11 @@ const getProfile = async () => {
   return data;
 };
 
+const logout = (setUser) => {
+  setUser(false);
+  localStorage.removeItem("token");
+};
+
 const storeToken = (token) => {
   localStorage.setItem("token", token);
 };
@@ -45,4 +50,4 @@ const checktoken = () => {
   return false;
 };
 
-export { login, register, checktoken, getProfile };
+export { login, register, checktoken, getProfile, logout };

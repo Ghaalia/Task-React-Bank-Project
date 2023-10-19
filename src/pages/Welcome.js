@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const Welcome = () => {
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  if (user) {
+    navigate("/homepage");
+  }
+
   return (
     <div className="flex items-center justify-center flex-col  h-screen ">
       <div className="border border-solid border-gray-500 border-opacity-20 shadow-lg shadow-green-600  w-[50%] h-[60%] flex justify-center items-center flex-col">

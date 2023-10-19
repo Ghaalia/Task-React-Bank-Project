@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Deposit from "./Deposit";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "../api/auth";
+import UserContext from "../context/UserContext";
 
 const HomePage = () => {
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const { data } = useQuery({
     queryKey: ["userProfile"],
     queryFn: () => getProfile(),
   });
 
-  const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center flex-col  h-screen ">
       <div className="w-[90%] h-[100%] justify-center items-center">

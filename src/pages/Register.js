@@ -33,8 +33,8 @@ const Register = () => {
           <div className="flex flex-col justify-center items-center gap-6 w-full">
             <h3 className="text-[40px] font-bold text-white">Register</h3>
 
-            <div className="flex justify-between align-middle  w-[60%]">
-              <label className="block text-white text-lg font-small">
+            <div className="flex justify-between align-middle">
+              <label className="block text-white text-lg font-small px-2">
                 Username:
               </label>
               <input
@@ -46,32 +46,39 @@ const Register = () => {
               ></input>
             </div>
 
-            <div className="flex justify-between align-middle  w-[60%]">
-              <label className="block text-white text-lg font-small items-start">
+            <div className="flex justify-between align-middle">
+              <label className="block text-white text-lg font-small px-2">
                 Password:
               </label>
               <input
                 name="password"
                 onChange={handleChange}
-                className="w-[250px] px-3 py-1 ml-2 text-gray-600 rounded-md"
+                className="w-[250px] py-1 ml-2 text-gray-600 rounded-md"
                 placeholder=""
                 type="password"
               ></input>
             </div>
 
-            <div className="flex justify-between align-middle  w-[60%]">
+            <div className="flex justify-between align-middle">
               <label className="block text-white text-lg font-small">
-                Image:
+                Profile Image:
               </label>
               <input
                 onChange={handleChange}
                 type="file"
                 name="image"
-                className="w-[250px] text-white"
+                className="w-[250px] text-white px-2"
               ></input>
             </div>
 
-            <div>
+            <div className="flex justify-between place-items-baseline w-[80%]">
+              <button
+                onClick={() => navigate("/login")}
+                className="text-gray-300 text-xs hover:underline"
+              >
+                Already have an Account? Login
+              </button>
+
               {isPending ? (
                 <button
                   disabled
