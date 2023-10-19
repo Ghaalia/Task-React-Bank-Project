@@ -55,7 +55,13 @@ const Login = () => {
                 ></input>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-between place-items-baseline">
+                <button
+                  onClick={() => navigate("/register")}
+                  className="text-gray-300 text-xs hover:underline"
+                >
+                  Already have an Account? Register
+                </button>
                 {isPending ? (
                   <button
                     disabled

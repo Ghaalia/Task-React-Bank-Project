@@ -68,7 +68,7 @@ const Register = () => {
                 placeholder="" //??
                 type="file"
                 name="image"
-                className="w-[250px] "
+                className="w-[250px] text-white"
               ></input>
             </div>
 
