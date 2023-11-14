@@ -32,6 +32,7 @@ const Login = () => {
         <div className="flex flex-col items-center justify-center gap-20 border border-solid h-[50%] w-[50%]  border-gray-500 border-opacity-20 shadow-lg shadow-green-600 rounded-md ">
           <div className="flex flex-col justify-center items-center gap-6">
             <h3 className="text-[50px] text-white font-bold">Login</h3>
+
             <div className="flex justify-center">
               <label className="block text-white text-lg font-small px-2 ">
                 Username:
